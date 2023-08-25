@@ -23,7 +23,7 @@ module.exports = () => {
       new InjectManifest({
         swSrc: "./src-sw.js",
         swDest: "src-sw.js",
-      })
+      }),
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
@@ -130,7 +130,4 @@ module.exports = () => {
           When you copy and paste them below, you'll be done here.
         */
 
-      ],
-    },
-  };
-};
+

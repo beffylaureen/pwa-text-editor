@@ -4,6 +4,7 @@ const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
 const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
+const paths = ["style", "script", "worker"];
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -71,7 +72,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
   If you supply the correct values below, this file is complete.
 */
 
-const paths = ["style", "script", "worker"];
+
 
 registerRoute( ({ request }) => paths.includes(request.destination),
   new StateWhileRevalidate({
